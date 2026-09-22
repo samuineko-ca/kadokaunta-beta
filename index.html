@@ -1,0 +1,195 @@
+<title>Kado Kaunta Beta</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #161616;
+    --surface-border: #2a2a2a;
+    --gold: #d4af37;
+    --gold-dim: #7a6a2e;
+    --text: #ededed;
+    --muted: #9a9a9a;
+    --done: #6fae82;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding-inline: 20px;
+    padding-block: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .page {
+    width: 100%;
+    max-width: 440px;
+  }
+  .wordmark {
+    font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--gold);
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+  .tagline {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 4px;
+    margin-bottom: 28px;
+  }
+  .intro {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+  .intro b { color: var(--gold); }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .step-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-dim);
+    color: var(--gold);
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .step-num.done {
+    background: var(--done);
+    border-color: var(--done);
+    color: #0a0a0a;
+  }
+  .step-title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 1.02rem;
+  }
+  .step-desc {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    margin-left: 42px;
+  }
+  .step-btn {
+    margin-left: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--gold);
+    color: #14110a;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    padding: 11px 16px;
+    border-radius: 10px;
+    transition: filter 0.15s, transform 0.1s;
+  }
+  .step-btn:active { transform: scale(0.98); }
+  .step-btn:hover { filter: brightness(1.08); }
+  .hint {
+    margin-left: 42px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .footer {
+    margin-top: 26px;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .footer a { color: var(--gold); text-decoration: none; }
+  @media (max-width: 380px) {
+    .step-desc, .step-btn, .hint { margin-left: 0; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+
+<div class="page">
+  <div class="wordmark">Kado Kaunta</div>
+  <div class="tagline">Closed beta &middot; Android</div>
+
+  <div class="intro">
+    You're invited to test <b>Kado Kaunta</b>, a blackjack card-counting trainer, before
+    its Play Store launch. No account, no payment &mdash; just two quick taps below.
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-head">
+        <div class="step-num" id="num1">1</div>
+        <div class="step-title">Join the tester group</div>
+      </div>
+      <div class="step-desc">Confirms you as an eligible tester with Google Play.</div>
+      <a class="step-btn" id="btn1" href="https://groups.google.com/g/kadokaunta-testers" target="_blank" rel="noopener">Join Group ↗</a>
+    </div>
+
+    <div class="step">
+      <div class="step-head">
+        <div class="step-num" id="num2">2</div>
+        <div class="step-title">Accept the test invite</div>
+      </div>
+      <div class="step-desc">Takes you to Google Play to install the app.</div>
+      <a class="step-btn" href="https://play.google.com/apps/testing/com.samuineko.kadokaunta" target="_blank" rel="noopener">Get the App ↗</a>
+      <div class="hint">Do Step 1 first &mdash; skipping ahead shows "app not available."</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Already in the group from an earlier visit? Go straight to Step 2.<br>
+    Trouble installing? <a href="mailto:samuineko.ca@gmail.com">samuineko.ca@gmail.com</a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    try {
+      var btn1 = document.getElementById('btn1');
+      var num1 = document.getElementById('num1');
+      if (localStorage.getItem('kk_step1_done') === '1') {
+        num1.textContent = '✓';
+        num1.classList.add('done');
+      }
+      btn1.addEventListener('click', function () {
+        num1.textContent = '✓';
+        num1.classList.add('done');
+        try { localStorage.setItem('kk_step1_done', '1'); } catch (e) {}
+      });
+    } catch (e) {}
+  })();
+</script>
